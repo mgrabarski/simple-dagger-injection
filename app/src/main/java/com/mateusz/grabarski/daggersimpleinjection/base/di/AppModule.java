@@ -7,6 +7,8 @@ import com.mateusz.grabarski.daggersimpleinjection.base.App;
 import com.mateusz.grabarski.daggersimpleinjection.base.Constants;
 import com.mateusz.grabarski.daggersimpleinjection.settings.SettingsManager;
 
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -28,6 +30,7 @@ public class AppModule {
     }
 
     @Provides
+    @Singleton
     SettingsManager provideSettingsManager(SharedPreferences sharedPreferences) {
         return new SettingsManager(sharedPreferences);
     }
